@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: build-pod
+  name: build-pod
+spec:
+  containers:
+  - image: busybox
+    name: test
+    command: ['sh', '-c', 'sleep infinity']
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
