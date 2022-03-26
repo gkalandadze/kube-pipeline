@@ -4,10 +4,13 @@ pipeline {
       yamlFile "pod-template.yaml"
     }
   }
+  tools {
+    maven 'Maven 3.8.5'
+  }
   stages {
-    stage('Build') {
+    stage('First Stage') {
       steps {
-        sh 'echo Hello world!'
+        sh 'mvn -v'
       }
     }
   }
