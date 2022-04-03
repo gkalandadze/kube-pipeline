@@ -17,7 +17,11 @@ pipeline {
         sh 'hostname'
       }
     }
-
+  }
+  post {
+    success {
+      echo "Pipeline completed successfully"
+    }
   }
   tools {
     maven 'Maven 3.8.5'
