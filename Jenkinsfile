@@ -1,11 +1,9 @@
 pipeline {
   agent {
     kubernetes {
-      yamlFile "pod-template.yaml"
+      yamlFile 'pod-template.yaml'
     }
-  }
-  tools {
-    maven 'Maven 3.8.5'
+
   }
   stages {
     stage('First Stage') {
@@ -13,5 +11,15 @@ pipeline {
         sh 'mvn -v'
       }
     }
+
+    stage('Second Stage') {
+      steps {
+        sh 'hostname'
+      }
+    }
+
+  }
+  tools {
+    maven 'Maven 3.8.5'
   }
 }
